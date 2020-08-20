@@ -12,6 +12,8 @@ import './App.css';
 
 import config from './config';
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,7 @@ class App extends React.Component {
     fetch(`${config.API_ENDPOINT}/api/notes/${noteId}`, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${config.API_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'content-type': 'application/json',
       },
     })
@@ -46,7 +48,7 @@ class App extends React.Component {
     fetch(`${config.API_ENDPOINT}/api/folders/`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${config.API_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify({
@@ -67,7 +69,7 @@ class App extends React.Component {
     fetch(`${config.API_ENDPOINT}/api/${destination}/`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${config.API_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'content-type': 'application/json',
       },
       body: JSON.stringify(body)
@@ -91,7 +93,7 @@ class App extends React.Component {
       fetch(`${config.API_ENDPOINT}/api/notes`, {
         headers:
         {
-          'Authorization': `Bearer ${config.API_KEY}`,
+          'Authorization': `Bearer ${API_KEY}`,
           'content-type': 'application/json',
         },
 
@@ -99,7 +101,7 @@ class App extends React.Component {
       fetch(`${config.API_ENDPOINT}/api/folders`, {
         headers:
         {
-          'Authorization': `Bearer ${config.API_KEY}`,
+          'Authorization': `Bearer ${API_KEY}`,
           'content-type': 'application/json',
         },
       })
