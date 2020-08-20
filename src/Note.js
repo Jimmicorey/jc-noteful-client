@@ -36,7 +36,7 @@ class Note extends React.Component {
           </div>
         </Link>
         <section>
-          <p>Last Modified: {format(new Date(modified), 'MM/DD/YYYY')}</p>
+          <p>Last Modified: {format(new Date(modified), 'MM/dd/yyyy')}</p>
         </section>
         <div>
           <button
